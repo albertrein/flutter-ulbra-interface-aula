@@ -3,27 +3,27 @@ import 'package:flutter/material.dart';
 class MenuRodape extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return  BottomNavigationBar(
+    return  BottomNavigationBar(        
         items: [
           BottomNavigationBarItem(
             icon: Stack(
               children: <Widget>[
-                new Icon(Icons.message_outlined),
-                new Positioned(
+                const Icon(Icons.message_outlined),
+                Positioned(
                   right: 0,
-                  child: new Container(
+                  child: Container(
                     padding: EdgeInsets.all(1),
-                    decoration: new BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(6),
                     ),
-                    constraints: BoxConstraints(
+                    constraints: const BoxConstraints(
                       minWidth: 12,
                       minHeight: 12,
                     ),
-                    child: new Text(
+                    child: const Text(
                       '0',
-                      style: new TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
                         fontSize: 8,
                       ),
@@ -36,24 +36,24 @@ class MenuRodape extends StatelessWidget{
             label: ('Mensagens'),
           ),
           BottomNavigationBarItem(
-            icon: new Stack(
+            icon: Stack(
               children: <Widget>[
-                new Icon(Icons.add_alert_outlined),
-                new Positioned(
+                const Icon(Icons.add_alert_outlined),
+                Positioned(
                   right: 0,
-                  child: new Container(
+                  child:  Container(
                     padding: EdgeInsets.all(1),
-                    decoration: new BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(6),
                     ),
-                    constraints: BoxConstraints(
+                    constraints: const BoxConstraints(
                       minWidth: 12,
                       minHeight: 12,
                     ),
-                    child: new Text(
+                    child: const Text(
                       '6',
-                      style: new TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
                         fontSize: 8,
                       ),
@@ -66,8 +66,10 @@ class MenuRodape extends StatelessWidget{
             label: ('Avisos'),
           ),
         ],
-        backgroundColor: Colors.black54,
+        backgroundColor: Colors.black87,
         selectedItemColor: Colors.yellow,
+        unselectedItemColor: Colors.yellow,
+        type: BottomNavigationBarType.fixed,
       );    
   }
 }
