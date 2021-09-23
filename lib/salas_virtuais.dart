@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'cadeira.dart';
 
 class SalaVirtual extends StatelessWidget{
   String tituloCadeira = "";
@@ -14,22 +15,22 @@ class SalaVirtual extends StatelessWidget{
     return(
       Stack(
         children: <Widget>[
-          new Icon(Icons.star_border_outlined),
-          new Positioned(
+          const Icon(Icons.star_border_outlined),
+          Positioned(
             right: 0,
-            child: new Container(
-              padding: EdgeInsets.all(1),
-              decoration: new BoxDecoration(
+            child: Container(
+              padding: const EdgeInsets.all(1),
+              decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(6),
               ),
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 minWidth: 12,
                 minHeight: 12,
               ),
-              child: new Text(
-                this.counterAtividadeAvaliativa,
-                style: new TextStyle(
+              child: Text(
+                counterAtividadeAvaliativa,
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 8,
                 ),
@@ -46,22 +47,22 @@ class SalaVirtual extends StatelessWidget{
     return(
       Stack(
         children: <Widget>[
-          new Icon(Icons.chat_bubble_outline),
-          new Positioned(
+          const Icon(Icons.chat_bubble_outline),
+          Positioned(
             right: 0,
-            child: new Container(
-              padding: EdgeInsets.all(1),
-              decoration: new BoxDecoration(
+            child: Container(
+              padding: const EdgeInsets.all(1),
+              decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(6),
               ),
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 minWidth: 12,
                 minHeight: 12,
               ),
-              child: new Text(
-                this.counterIteracao,
-                style: new TextStyle(
+              child: Text(
+                counterIteracao,
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 8,
                 ),
@@ -78,22 +79,22 @@ class SalaVirtual extends StatelessWidget{
     return(
       Stack(
         children: <Widget>[
-          new Icon(Icons.sim_card_alert_outlined),
-          new Positioned(
+          const Icon(Icons.sim_card_alert_outlined),
+          Positioned(
             right: 0,
-            child: new Container(
-              padding: EdgeInsets.all(1),
-              decoration: new BoxDecoration(
+            child: Container(
+              padding: const EdgeInsets.all(1),
+              decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(6),
               ),
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 minWidth: 12,
                 minHeight: 12,
               ),
-              child: new Text(
-                this.counterRoteiro,
-                style: new TextStyle(
+              child: Text(
+                counterRoteiro,
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 8,
                 ),
@@ -110,44 +111,49 @@ class SalaVirtual extends StatelessWidget{
   Widget build(BuildContext context) {
     return (
       Padding(
-        padding: EdgeInsets.only(left: 5.0, top: 5.0),
+        padding: const EdgeInsets.only(left: 5.0, top: 5.0),
         child: Card(
           color: Colors.white,
-          child: Container(
-            decoration: BoxDecoration(
-            border: Border(left: BorderSide(color: corTema, width: 5))),
-            child: Column(
-              children: [
-                Container(
-                  child: Column(
+          child: InkWell(
+            splashColor: corTema,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Cadeira(tituloCadeira, corTema)));        
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border(left: BorderSide(color: corTema, width: 5))
+              ),
+              child: Column(
+                children: [                
+                  Column(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(top: 22.0, bottom: 8.0, left: 5),
-                        child: Text(this.tituloCadeira, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                        padding: const EdgeInsets.only(top: 22.0, bottom: 8.0, left: 5),
+                        child: Text(tituloCadeira, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                       ),
                       Padding(
-                        padding:  EdgeInsets.only(top: 22),
+                        padding: const EdgeInsets.only(top: 22),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            this._makeIconAtividadeAvaliativa(context),
+                            _makeIconAtividadeAvaliativa(context),
                             Padding(
-                              padding: EdgeInsets.only(left: 6.0, right: 6.0),
-                              child: this._makeIconIteracao(context),
+                              padding: const EdgeInsets.only(left: 6.0, right: 6.0),
+                              child: _makeIconIteracao(context),
                             ),                            
-                            this._makeIconRoteiro(context),
+                            _makeIconRoteiro(context),
                           ],
                         ),
                       )
                     ],
-                  )
-                ),
-              ],
-            ),
-          )
-        ),
-      )      
+                  )               
+                ],
+              ),
+            )
+          ),
+        )
+      )
     );
   }  
 }
