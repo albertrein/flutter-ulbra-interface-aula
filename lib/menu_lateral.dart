@@ -9,7 +9,7 @@ class MenuLateral extends StatelessWidget {
         children: [
           Container(
             height: 100.0,
-            child: DrawerHeader(
+            child: const DrawerHeader(
               child: Text(
                 'Aluno',
                 style: TextStyle(color: Colors.white, fontSize: 25),
