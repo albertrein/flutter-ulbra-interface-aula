@@ -124,32 +124,28 @@ class SalaVirtual extends StatelessWidget{
                 border: Border(left: BorderSide(color: corTema, width: 5))
               ),
               child: Column(
-                children: [                
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 22.0, bottom: 8.0, left: 5),
-                        child: Text(tituloCadeira, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 22),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            _makeIconAtividadeAvaliativa(context),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 6.0, right: 6.0),
-                              child: _makeIconIteracao(context),
-                            ),                            
-                            _makeIconRoteiro(context),
-                          ],
-                        ),
-                      )
-                    ],
-                  )               
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 22.0, bottom: 8.0, left: 5),
+                    child: Text(tituloCadeira, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 22),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        _makeIconAtividadeAvaliativa(context),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 6.0, right: 6.0),
+                          child: _makeIconIteracao(context),
+                        ),                            
+                        _makeIconRoteiro(context),
+                      ],
+                    ),
+                  )
                 ],
-              ),
+              )
             )
           ),
         )
